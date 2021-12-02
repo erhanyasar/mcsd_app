@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Selam, Naber } from "./components/Selam";
+import "./css/App.css";
 
 function App() {
+  const [ornekDegisken, setOrnekDegisken] = useState("");
+
+  const DegisiklikOlunca = (event) => {
+    setOrnekDegisken(event.target.value);
+    console.log(ornekDegisken);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input
+        defaultValue={ornekDegisken}
+        placeholder="Adınızı giriniz..."
+        onChange={(e) => DegisiklikOlunca(e)}
+      ></input>
+      <Selam isim={ornekDegisken} />
+      <Naber />
+    </>
   );
 }
 
