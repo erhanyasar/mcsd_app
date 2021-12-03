@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
-export function Selam({ isim }) {
-  return <>{isim}</>;
+export function Selam({ isim, isGorunur }) {
+  return <>{isGorunur && isim}</>;
 }
 
 export function Naber() {
